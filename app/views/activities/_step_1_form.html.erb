@@ -1,0 +1,20 @@
+<%= form_with(model: activity) do |form| %>
+
+  <%= render "error_display", activity: activity %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :address %>
+    <%= form.hidden_field :starts_at %>
+    <%= form.hidden_field :ends_at %>
+  </div>
+
+  <div>
+    <%= form.submit "Next", class: "btn"  %>
+  </div>
+
+<% end %>

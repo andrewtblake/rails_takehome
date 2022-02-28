@@ -1,0 +1,25 @@
+<%= form_with(model: activity) do |form| %>
+
+  <%= render "error_display", activity: activity %>
+
+  <div>
+    <%= form.label :starts_at, style: "display: block" %>
+    <%= form.datetime_field :starts_at, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.label :ends_at, style: "display: block" %>
+    <%= form.datetime_field :ends_at, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :name %>
+    <%= form.hidden_field :address %>
+  </div>
+
+  <div>
+    <%= form.submit "Back", class: "btn" %>
+    <%= form.submit "Save", class: "btn"  %>
+  </div>
+
+<% end %>
