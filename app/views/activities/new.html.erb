@@ -1,5 +1,7 @@
 <h1>New activity</h1>
 
+<h2><%= @activity.current_step.humanize %> of 3</h2>
+
 <%= render "#{@activity.current_step}_form", activity: @activity %>
 
 <br>
