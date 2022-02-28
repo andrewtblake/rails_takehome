@@ -77,7 +77,6 @@ class ActivitiesController < ApplicationController
       @activity.previous_step if @activity.valid?
     end
     session[:activity_step] = @activity.current_step
-    puts @activity.current_step.inspect
     redirect_to edit_activity_path
   end
 
