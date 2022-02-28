@@ -1,5 +1,9 @@
-class Task5 < ActiveRecord::Base
-  has_many :notes, as: :noteable, dependent: :destroy
+module Noteable
+  extend ActiveSupport::Concern
+
+  included do
+    has_many :notes, as: :noteable, dependent: :destroy
+  end
 
   def has_simple_notes?
     notes.not_reminders_or_todos.any?
@@ -12,4 +16,8 @@ class Task5 < ActiveRecord::Base
   def has_reminder_notes?
     notes.reminders.any?
   end
+end
+
+class Task5 < ActiveRecord::Base
+  include Noteable
 end
